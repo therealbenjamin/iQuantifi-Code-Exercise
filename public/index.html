@@ -40,8 +40,22 @@
 								{{expense.category}}
 								${{expense.amount}}
 							</div>
-							<button ng-click="editExpense(expense._id)">Edit</button>
+							<button ng-click="showForm = !showForm">Edit</button>
 							<button ng-click="deleteExpense(expense._id)">Delete</button>
+							<div class="updateForm" ng-show="showForm">
+								<h4>Update Expense</h4>
+								<div class="form-group">
+									<input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="form1">
+									<input type="number" class="form-control input-lg text-center" placeholder="Amount" ng-model="form3">
+									<select name="select" ng-model="form2">
+										<option value="committed">Committed</option>
+										<option value="discretionary">Discretionary</option>
+									</select>
+								</div>
+
+								<button type="submit" class="btn btn-primary btn-lg" ng-click="editExpense(expense._id)">Add</button>
+							</form>
+							</div>
 					</label>
 				</div>
 
@@ -53,7 +67,7 @@
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
 					<div class="form-group">
-						<input type="text" class="form-control input-lg text-center" placeholder="Expense Description" ng-model="form1">
+						<input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="form1">
 						<input type="number" class="form-control input-lg text-center" placeholder="Amount" ng-model="form3">
 						<select name="select" ng-model="form2">
 							<option value="committed">Committed</option>

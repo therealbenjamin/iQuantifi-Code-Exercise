@@ -7,6 +7,10 @@ body {
   background-color: #410404;
 }
 
+h4 {
+  text-align: center;
+}
+
 #expense-list {
   margin-bottom:30px;
   width: 75%;
@@ -30,4 +34,10 @@ span {
 
 .ng-invalid {
   border: 1px solid red;
+}
+
+.updateForm {
+  width: 580px;
+  height: 300px;
+  border: 5px solid black;
 }

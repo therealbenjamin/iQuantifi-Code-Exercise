@@ -2,9 +2,7 @@ var app = angular.module('app', []);
 
 function mainController($scope, $http) {
 
-	// $scope.$watch('createExpense', function($scope.expenses){
-	// 	console.log("DERP");
-	// });
+	$scope.showForm = false;
 
 	// when landing on the page, get all expenses and show them
 	$http.get('/api/expenses')
