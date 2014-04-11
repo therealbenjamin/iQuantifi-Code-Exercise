@@ -1,0 +1,33 @@
+html {
+  overflow-y:scroll;
+}
+
+body {
+  padding-top:50px;
+  background-color: #410404;
+}
+
+#expense-list {
+  margin-bottom:30px;
+  width: 75%;
+}
+
+.expense-list-items {
+  color: white;
+}
+
+#expense-form {
+  margin:50px;
+}
+
+button {
+  width: 80px;
+}
+
+span {
+  margin-left: 100px;
+}
+
+.ng-invalid {
+  border: 1px solid red;
+}

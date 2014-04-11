@@ -1,0 +1,11 @@
+{
+  "name"         : "node-expenses",
+  "version"      : "0.0.0",
+  "description"  : "expense list application.",
+  "main"         : "server.js",
+  "author"       : "Ben Blackburn",
+  "dependencies" : {
+    "express"    : "~3.4.4",
+    "mongoose"   : "~3.6.2"
+  }
+}

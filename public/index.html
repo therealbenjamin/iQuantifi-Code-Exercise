@@ -1,0 +1,76 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="app">
+<head>
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>iQuantifi Expense App</title>
+
+	<!-- stylez -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/main.css">
+
+	<!-- scriptage -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="core.js"></script>
+
+</head>
+<!-- set controller -->
+<body ng-controller="mainController">
+	<div class="container">
+
+		<!-- header & expense count -->
+		<div class="jumbotron text-center">
+			<h1>Expenses<span class="label label-info">{{expenses.length}}</span></h1>
+		</div>
+
+		<!-- display expenses -->
+		<div id="expense-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+
+				<!-- loop thru expenses -->
+				<div ng-repeat="expense in expenses">
+					<label>
+							<div class="expense-list-items">
+								{{expense.kind}}
+								{{expense.category}}
+								${{expense.amount}}
+							</div>
+							<button ng-click="editExpense(expense._id)">Edit</button>
+							<button ng-click="deleteExpense(expense._id)">Delete</button>
+					</label>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- create expenses -->
+		<div id="expense-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center" placeholder="Expense Description" ng-model="form1">
+						<input type="number" class="form-control input-lg text-center" placeholder="Amount" ng-model="form3">
+						<select name="select" ng-model="form2">
+							<option value="committed">Committed</option>
+							<option value="discretionary">Discretionary</option>
+						</select>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createExpense()">Add</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="text-center text-muted">
+			<p>A coding exercise for <a href="http://www.iquantifi.com/">iQuantifi</a>.</p>
+		</div>
+
+	</div>
+
+</body>
+</html>
