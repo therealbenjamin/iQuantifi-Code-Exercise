@@ -32,6 +32,10 @@ span {
   margin-left: 100px;
 }
 
+submit {
+  text-align: center;
+}
+
 .ng-invalid {
   border: 1px solid red;
 }
@@ -40,4 +44,5 @@ span {
   width: 580px;
   height: 300px;
   border: 5px solid black;
+  text-align: center;
 }

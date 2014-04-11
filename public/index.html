@@ -36,9 +36,7 @@
 				<div ng-repeat="expense in expenses">
 					<label>
 							<div class="expense-list-items">
-								{{expense.kind}}
-								{{expense.category}}
-								${{expense.amount}}
+								{{expense.kind}}  ||  {{expense.category}} ||  ${{expense.amount}}
 							</div>
 							<button ng-click="showForm = !showForm">Edit</button>
 							<button ng-click="deleteExpense(expense._id)">Delete</button>
@@ -53,7 +51,7 @@
 									</select>
 								</div>
 
-								<button type="submit" class="btn btn-primary btn-lg" ng-click="editExpense(expense._id)">Add</button>
+								<button type="submit" class="btn btn-primary btn-lg" ng-click="editExpense(expense._id)">Fix</button>
 							</form>
 							</div>
 					</label>

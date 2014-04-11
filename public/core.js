@@ -29,9 +29,13 @@ function mainController($scope, $http) {
 	};
 
 	$scope.editExpense = function(id){
-		$http.put('/api/expenses/' + id)
+		var expense = {"kind":$scope.formEdit1, "category": $scope.formEdit2, "amount": $scope.formEdit3};
+		$http.put('/api/expenses/' + id, expense)
 			.success(function(data){
+				$scope.formData = {};
+				$('input').val('');
 				$scope.expenses = data;
+				// console.log(data);
 			})
 			.error(function(data){
 				console.log('Error' + data);
@@ -48,7 +52,5 @@ function mainController($scope, $http) {
 				console.log('Error: ' + data);
 			});
 	};
-
-	// edit an expense
 
 }

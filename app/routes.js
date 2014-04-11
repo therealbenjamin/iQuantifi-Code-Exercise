@@ -39,20 +39,10 @@ module.exports = function(app) {
 	});
 
 	// edit an expense
-	app.put('/api/expenses', function(req, res){
-
-		Expense.update({
-			kind: req.body.kind,
-			category: req.body.category,
-			amount: req.body.amount
-		}, function(err, expense){
-			if(err)
-				res.send(err);
-			res.json(expenses);
-			Expense.find(function(err, expenses){
-				if(err)
-					res.send(err);
-			});
+	app.put('/api/expenses/:expense_id', function(req, res){
+		Expense.findById(req.params.expense_id, function(err, result) {
+			console.log(req.body);
+			if(err) console.log(err);
 		});
 	});
 
