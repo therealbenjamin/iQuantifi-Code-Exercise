@@ -28,6 +28,16 @@ function mainController($scope, $http) {
 			});
 	};
 
+	$scope.editExpense = function(id){
+		$http.put('/api/expenses/' + id)
+			.success(function(data){
+				$scope.expenses = data;
+			})
+			.error(function(data){
+				console.log('Error' + data);
+			});
+	};
+
 	// delete a expense after checking it
 	$scope.deleteExpense = function(id) {
 		$http.delete('/api/expenses/' + id)
@@ -40,13 +50,5 @@ function mainController($scope, $http) {
 	};
 
 	// edit an expense
-	$scope.editExpense = function(id){
-		$http.put('/api/expenses/' + id)
-			.success(function(data){
-				$scope.expenses = data;
-			})
-			.error(function(data){
-				console.log('Error' + data);
-			});
-	}
+
 }

@@ -45,9 +45,9 @@
 							<div class="updateForm" ng-show="showForm">
 								<h4>Update Expense</h4>
 								<div class="form-group">
-									<input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="form1">
-									<input type="number" class="form-control input-lg text-center" placeholder="Amount" ng-model="form3">
-									<select name="select" ng-model="form2">
+									<input type="text" class="form-control input-lg text-center" placeholder="{{expense.kind}}" ng-model="formEdit1">
+									<input type="number" class="form-control input-lg text-center" placeholder="{{expense.amount}}" ng-model="formEdit3">
+									<select name="select" ng-model="formEdit2">
 										<option value="committed">Committed</option>
 										<option value="discretionary">Discretionary</option>
 									</select>
