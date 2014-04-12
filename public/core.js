@@ -42,7 +42,7 @@ function mainController($scope, $http) {
 			});
 	};
 
-	// delete a expense after checking it
+	// delete an expense after checking it
 	$scope.deleteExpense = function(id) {
 		$http.delete('/api/expenses/' + id)
 			.success(function(data) {
