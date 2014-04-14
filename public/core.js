@@ -28,6 +28,7 @@ function mainController($scope, $http) {
 			});
 	};
 
+	// edit an expense. work in progress.
 	$scope.editExpense = function(id){
 		var expense = {"kind":$scope.formEdit1, "category": $scope.formEdit2, "amount": $scope.formEdit3};
 		$http.put('/api/expenses/' + id, expense)
@@ -42,7 +43,7 @@ function mainController($scope, $http) {
 			});
 	};
 
-	// delete an expense after checking it
+	// delete an expense 
 	$scope.deleteExpense = function(id) {
 		$http.delete('/api/expenses/' + id)
 			.success(function(data) {
